@@ -12,6 +12,9 @@
   "keywords": [],
   "author": "Samuel George",
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "microbundle": "^0.15.1"
   },

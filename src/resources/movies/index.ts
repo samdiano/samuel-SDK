@@ -1,10 +1,10 @@
 import { Base } from '../base';
-import { Movie } from './types';
+import { Movie, GetMoviesOptions, MoviesResponse } from './types';
 
 const resource = 'movie';
 
 export class Movies extends Base {
-  async getAllMovies(options?: GetMoviesOptions): Promise<Movie[]> {
+  async getAllMovies(options?: GetMoviesOptions): Promise<MoviesResponse> {
     return this.request(resource, options);
   }
 }

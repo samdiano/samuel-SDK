@@ -1,4 +1,4 @@
-interface Movie {
+export interface Movie {
   _id: string;
   name: string;
   runtimeInMinutes: number;
@@ -9,15 +9,19 @@ interface Movie {
   rottenTomatoesScore: number;
 }
 
-interface MovieResponse {
-  movies: Movie[];
+export interface MoviesResponse {
+  docs: Movie[];
   total: number;
+  limit: number;
+  offset: number;
+  page: number;
+  pages: number;
 }
 
-interface GetMoviesOptions {
+export interface GetMoviesOptions {
   limit?: number;
   page?: number;
   offset?: number;
   sort?: string;
-  filter?: string;
+  filters?: object;
 }
