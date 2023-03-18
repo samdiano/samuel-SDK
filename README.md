@@ -9,7 +9,7 @@ This SDK is designed to provide easy access to information about The Lord of the
 The SDK can be installed using your preferred package manager. For example, if you're using npm:
 
 ```bash
-npm install lord-of-the-rings-sdk
+npm install @samdiano/lotr-sdk
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ npm install lord-of-the-rings-sdk
 To use the SDK, first import it into your code:
 
 ```javascript
-const LordOfTheRingsSDK = require('lord-of-the-rings-sdk');
+const LordOfTheRingsSDK = require('@samdiano/lotr-sdk');
 ```
 
 Then create a new instance of the SDK with your API key. Sign up [here](https://the-one-api.dev/) to obtain your API key:
@@ -74,7 +74,7 @@ Returns an object containing an array of objects, each containing a quote from t
 Example:
 
 ```javascript
-const quotes = await sdk.getMovieQuotes('API_KEY');
+const quotes = await sdk.getMovieQuotes('tt0120737');
 console.log(quotes); // { quotes: [{...}, {...}, {...}], total: 8, limit: 10, page: 1, pages: 1 }
 ```
 
@@ -104,7 +104,7 @@ const movies = await sdk.getAllMovies(options);
 - To sort the results:
 
 ```javascript
-const options = { sort: '-releaseDate' };
+const options = { sort: 'name:asc' };
 const movies = await sdk.getAllMovies(options);
 ```
 
@@ -116,3 +116,5 @@ const options: GetOptions = {
 };
 const movies = await sdk.getAllMovies(options);
 ```
+
+You can get more info on how to add the query parameters from the API documentation [here](https://the-one-api.dev/documentation).

@@ -15,7 +15,7 @@ export class Movies extends Base {
   /*
    * Fetch all movies
    */
-  async getAllMovies(options?: GetOptions): Promise<MoviesSDKResponse> {
+  async getMovies(options?: GetOptions): Promise<MoviesSDKResponse> {
     const { docs, ...metadata } = await this.request<MoviesAPIResponse>(
       resource,
       options
