@@ -24,7 +24,9 @@ Then create a new instance of the SDK with your API key. Sign up [here](https://
 
 ```javascript
 const apiKey = 'YOUR_API_KEY';
-const lotr = new LordOfTheRingsSDK(apiKey);
+const lotr = new LordOfTheRingsSDK({
+  apiKey,
+});
 ```
 
 You can then use the methods provided by the SDK to access information about the movies. For example:

@@ -1,6 +1,6 @@
-import { LOTR } from '../../index';
+import LordOfTheRingsSDK from '../../index';
 
-const client = new LOTR({
+const client = new LordOfTheRingsSDK({
   apiKey: 'HRgveGa6MxM14M5QYZeS',
 });
 

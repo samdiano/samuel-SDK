@@ -1,9 +1,11 @@
 import { Movies } from './resources/movies';
 
-export class LOTR {
+class LOTR {
   movies: Movies;
 
   constructor(config: { apiKey: string; baseUrl?: string }) {
     this.movies = new Movies(config);
   }
 }
+
+export default LOTR;

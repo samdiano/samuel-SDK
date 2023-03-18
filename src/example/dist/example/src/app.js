@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const index_1 = require("../../index");
-const client = new index_1.LOTR({
+const client = new index_1.default({
     apiKey: 'HRgveGa6MxM14M5QYZeS',
 });
 client.movies
