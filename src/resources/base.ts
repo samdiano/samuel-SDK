@@ -1,11 +1,10 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { GetMoviesOptions } from './movies/types';
+import { GetOptions } from './movies/types';
 
 type Config = {
   apiKey: string;
   baseUrl?: string;
 };
-
 export abstract class Base {
   private readonly apiKey: string;
   private readonly baseUrl: string;
@@ -15,21 +14,34 @@ export abstract class Base {
     this.apiKey = apiKey;
   }
 
+  /*
+   * Method for sending HTTP requests using the axios library
+   */
   protected request<T>(
     endpoint: string,
-    params?: GetMoviesOptions,
+    params?: GetOptions,
     options?: AxiosRequestConfig
   ): Promise<T> {
     const url = `${this.baseUrl}/${endpoint}`;
+
+    /*
+     * Destructuring the filters property from the params object
+     * and using the remaining properties as otherOptions
+     */
     const { filters, ...otherOptions } = params ?? {};
 
-    // const queryParams = { ...filters, ...otherOptions }
-
+    /*
+     * Defining headers for the request that include the API key
+     */
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${this.apiKey}`,
     };
 
+    /*
+     * Combining params and otherOptions into a single params object
+     * and creating a config object for the axios request
+     */
     const config: AxiosRequestConfig = {
       ...options,
       headers,
@@ -39,9 +51,11 @@ export abstract class Base {
       },
     };
 
+    /*
+     * Sending the axios request and handling the response
+     */
     return axios(url, config).then((response: AxiosResponse<T>) => {
       if (response.status >= 200 && response.status < 300) {
-        console.log(response.request.path);
         return response.data;
       }
       throw new Error(response.statusText);

@@ -5,11 +5,7 @@ const client = new index_1.LOTR({
     apiKey: 'HRgveGa6MxM14M5QYZeS',
 });
 client.movies
-    .getAllMovies({
-    limit: 3,
-    page: 1,
-    sort: 'name:asc'
-})
+    .getMovieQuotes('5cd95395de30eff6ebccde5c', { limit: 10 })
     .then((data) => {
     console.log(data);
 });

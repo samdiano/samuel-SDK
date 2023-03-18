@@ -1,5 +1,7 @@
 import { Base } from '../base';
-import { GetMoviesOptions, MoviesResponse } from './types';
+import { GetOptions, MoviesSDKResponse, MovieSDKResponse, QuotesSDKResponse } from './types';
 export declare class Movies extends Base {
-    getAllMovies(options?: GetMoviesOptions): Promise<MoviesResponse>;
+    getAllMovies(options?: GetOptions): Promise<MoviesSDKResponse>;
+    getMovieById(id: string): Promise<MovieSDKResponse>;
+    getMovieQuotes(id: string, options?: GetOptions): Promise<QuotesSDKResponse>;
 }

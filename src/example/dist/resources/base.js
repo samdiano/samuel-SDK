@@ -28,7 +28,6 @@ class Base {
         const config = Object.assign(Object.assign({}, options), { headers, params: Object.assign(Object.assign({}, filters), otherOptions) });
         return (0, axios_1.default)(url, config).then((response) => {
             if (response.status >= 200 && response.status < 300) {
-                console.log(response.request.path);
                 return response.data;
             }
             throw new Error(response.statusText);
