@@ -5,9 +5,9 @@ type Config = {
   apiKey: string;
   baseUrl?: string;
 };
-export abstract class Base {
-  private readonly apiKey: string;
-  private readonly baseUrl: string;
+export class Base {
+  readonly apiKey: string;
+  readonly baseUrl: string;
 
   constructor({ apiKey, baseUrl = 'https://the-one-api.dev/v2' }: Config) {
     this.baseUrl = baseUrl;
@@ -17,17 +17,13 @@ export abstract class Base {
   /*
    * Method for sending HTTP requests using the axios library
    */
-  protected request<T>(
+  public request<T>(
     endpoint: string,
     params?: GetOptions,
     options?: AxiosRequestConfig
   ): Promise<T> {
     const url = `${this.baseUrl}/${endpoint}`;
 
-    /*
-     * Destructuring the filters property from the params object
-     * and using the remaining properties as otherOptions
-     */
     const { filters, ...otherOptions } = params ?? {};
 
     /*

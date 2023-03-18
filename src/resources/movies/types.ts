@@ -35,13 +35,13 @@ export interface Quote {
 }
 
 export interface QuotesAPIResponse {
-    docs: Quote[];
-    total: number;
-    limit: number;
-    offset: number;
-    page: number;
-    pages: number;
-  }
+  docs: Quote[];
+  total: number;
+  limit: number;
+  offset: number;
+  page: number;
+  pages: number;
+}
 export interface QuotesSDKResponse {
   quotes: Quote[];
   total: number;
@@ -50,7 +50,6 @@ export interface QuotesSDKResponse {
   page: number;
   pages: number;
 }
-
 
 export interface MovieSDKResponse {
   movie: Movie;
