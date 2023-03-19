@@ -1,6 +1,6 @@
 {
   "name": "@samdiano/lotr-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "repository": "https://github.com/samdiano/samuel-SDK.git",
   "main": "dist/index.js",
