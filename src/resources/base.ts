@@ -5,7 +5,7 @@ type Config = {
   apiKey: string;
   baseUrl?: string;
 };
-export abstract class Base {
+class Base {
   private readonly apiKey: string;
   private readonly baseUrl: string;
 
@@ -17,7 +17,7 @@ export abstract class Base {
   /*
    * Method for sending HTTP requests using the axios library
    */
-  protected request<T>(
+  public request<T>(
     endpoint: string,
     params?: GetOptions,
     options?: AxiosRequestConfig

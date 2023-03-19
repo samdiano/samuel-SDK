@@ -1,4 +1,4 @@
-import { Base } from '../base';
+import Base from '../base';
 import {
   Movie,
   GetOptions,
@@ -11,7 +11,7 @@ import {
 
 const resource = 'movie';
 
-export class Movies extends Base {
+class Movies extends Base {
   /*
    * Fetch all movies
    */
@@ -28,7 +28,7 @@ export class Movies extends Base {
    */
   async getMovieById(id: string): Promise<MovieSDKResponse> {
     const { docs, ...metadata } = await this.request<MoviesAPIResponse>(
-      resource
+      `${resource}/${id}`,
     );
     return { movie: docs[0] };
   }
@@ -47,3 +47,5 @@ export class Movies extends Base {
     return { quotes: docs, ...metadata };
   }
 }
+
+export default Movies;

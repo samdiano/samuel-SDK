@@ -118,3 +118,7 @@ const movies = await sdk.getAllMovies(options);
 ```
 
 You can get more info on how to add the query parameters from the API documentation [here](https://the-one-api.dev/documentation).
+
+## Testing
+
+The SDK includes a suite of tests to ensure that it is working as expected. To run the tests, run `npm test` from the root of the project. 

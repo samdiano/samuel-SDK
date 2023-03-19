@@ -1,4 +1,4 @@
-import { Movies } from './resources/movies';
+import Movies from './resources/movies';
 
 class LOTR {
   movies: Movies;
